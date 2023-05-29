@@ -53,21 +53,23 @@ class OperatingSystem():
         trocas_context_involuntaria = process.num_ctx_switches().involuntary
 
         # numero de sinais recebidos
-        sinais_recebidos = process.num_handles()
+
+        # process.num_handles() não funciona
+        #sinais_recebidos = process.num_handles()
 
         # tempo de execucao do processo em segundos
         tempo_execucao = process.create_time()
         
-        # memoria utilizada pelo processo em bytes enquanto executava
-        memoria_usada = process.memory_info().rss
+        # memoria utilizada pelo processo em GB enquanto executava
+        memoria_usada = process.memory_info().rss / (1024 ** 3)
         
         # Retornar os dados coletados
         data = {}
         data['trocas_context_voluntaria'] = trocas_context_voluntaria
         data['trocas_context_involuntaria'] = trocas_context_involuntaria
-        data['sinais_recebidos'] = sinais_recebidos
-        data['tempo_execucao'] = tempo_execucao
-        data['memoria_usada'] = memoria_usada
+        #data['sinais_recebidos'] = sinais_recebidos
+        data['tempo_execucao'] = f'{tempo_execucao:.0f} segundos'
+        data['memoria_usada'] = f'{memoria_usada:.3f} GB'
 
         return data
 

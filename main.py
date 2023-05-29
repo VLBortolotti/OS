@@ -12,8 +12,10 @@ OS = OperatingSystem()
 
 print('---------INFORMAÇÔES GERAIS DO SISTEMA---------')
 #metódo que pega as informações da máquina e escreve na tela
-OS.getInformations()
+#OS.getInformations()
 
 print('----------INFORMAÇÔES DO SUBPROCESSO-----------')
 #metodo que abre o processo e escreve na tela suas informações após seu encerramento
-OS.openProcessAndPrintInfo(process_path)
+#OS.openProcessAndPrintInfo(process_path)
+print("processo")
+print(OS.getProcess(1))
