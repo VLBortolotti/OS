@@ -18,8 +18,8 @@ class OperatingSystem():
         # Número de processadores
         num_processadores = os.cpu_count()
         
-        # Memória RAM total em bytes
-        memoria_total = psutil.virtual_memory().total
+        # Memória RAM total em GB
+        memoria_total = psutil.virtual_memory().total / (1024.0 ** 3)
         
         # Arquitetura do computador
         #arquitetura = os.uname().machine
@@ -27,19 +27,19 @@ class OperatingSystem():
         # Numero de processos em execução
         num_processos = len(psutil.pids())
 
-        # Memória RAM disponível para uso em Bytes
-        memoria_disponivel = psutil.virtual_memory().available
+        # Memória RAM disponível para uso em GB
+        memoria_disponivel = psutil.virtual_memory().available / (1024.0 ** 3)
 
-        # Tempo descorrido desde que o PC foi ligado
-        uptime = time.time() - psutil.boot_time()
+        # Tempo descorrido desde que o PC foi ligado em minutos
+        uptime = ( time.time() - psutil.boot_time() ) / 60
         
         print(f"Tipo de sistema operacional: {tipo_os}")
         print(f"Versão do sistema operacional: {versao_os}")
         #print(f"Arquitetura do computador: {arquitetura}")
-        print(f"Memória total: {memoria_total}")
-        print(f"Memória disponível {memoria_disponivel}")
+        print(f"Memória total: {memoria_total:.2f} GB")
+        print(f"Memória disponível {memoria_disponivel:.2f} GB")
         print(f"Número de processadores {num_processadores}")
-        print(f"Tempo que o computador está ligado: {uptime} segundos")
+        print(f"Tempo que o computador está ligado: {uptime:.2f} minutos")
         print(f"Número de processos: {num_processos}")
 
     def getProcess(self, process_id):

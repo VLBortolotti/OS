@@ -6,7 +6,7 @@ from OperatingSystem import *
 #FEITO ISSO, O ARQUIVO ESTARÁ PRONTO PARA SER EXECUTADO
 
 #caminho do executavel do subprocesso
-process_path = r""
+process_path = r"/snap/bin/code"
 
 OS = OperatingSystem()
 
