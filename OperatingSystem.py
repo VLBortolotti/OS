@@ -1,8 +1,8 @@
-import os
-import psutil
-import platform
-import time
-import subprocess
+import os # informacao do Operacionao
+import psutil # pegar info de processos rodando
+import platform # informacao do Operacionao
+import time 
+import subprocess # criar um processo
 
 class OperatingSystem():
     def __init__(self):
@@ -20,9 +20,6 @@ class OperatingSystem():
         
         # Memória RAM total em GB
         memoria_total = psutil.virtual_memory().total / (1024.0 ** 3)
-        
-        # Arquitetura do computador
-        #arquitetura = os.uname().machine
 
         # Numero de processos em execução
         num_processos = len(psutil.pids())
@@ -51,11 +48,6 @@ class OperatingSystem():
         
         # numero de trocas de contexto involuntarias
         trocas_context_involuntaria = process.num_ctx_switches().involuntary
-
-        # numero de sinais recebidos
-
-        # process.num_handles() não funciona
-        #sinais_recebidos = process.num_handles()
 
         # tempo de execucao do processo em segundos
         tempo_execucao = process.create_time()

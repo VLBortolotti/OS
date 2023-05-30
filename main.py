@@ -1,3 +1,7 @@
+# Autores:
+# Lucas Rondon Silveira Ales
+# Vítor Laco Bortolotti
+
 from OperatingSystem import *
 
 #O SISTEMA OPERACIONAL ESCOLHIDO FOI O WINDOWS
@@ -6,7 +10,7 @@ from OperatingSystem import *
 #FEITO ISSO, O ARQUIVO ESTARÁ PRONTO PARA SER EXECUTADO
 
 #caminho do executavel do subprocesso
-process_path = r"/snap/bin/code"
+process_path = r"/usr/bin/drawing"
 
 OS = OperatingSystem()
 
@@ -16,6 +20,7 @@ print('---------INFORMAÇÔES GERAIS DO SISTEMA---------')
 
 print('----------INFORMAÇÔES DO SUBPROCESSO-----------')
 #metodo que abre o processo e escreve na tela suas informações após seu encerramento
-#OS.openProcessAndPrintInfo(process_path)
-print("processo")
-print(OS.getProcess(1))
+OS.openProcessAndPrintInfo(process_path)
+
+#print("processo")
+#print(OS.getProcess(1))

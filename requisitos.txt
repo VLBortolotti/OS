@@ -1,0 +1,7 @@
+instalar módulos:
+psutil,
+platform,
+subprocess
+
+exemplo instalação com pip3
+pip3 install platform
